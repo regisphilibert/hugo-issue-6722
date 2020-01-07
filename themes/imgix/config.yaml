@@ -1,0 +1,7 @@
+module:
+  hugoVersion:
+    extended: false
+    min: "0.62.2"
+  mounts:
+    - source: debug
+      target: layouts/partials/debug

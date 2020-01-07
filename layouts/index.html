@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+
+  {{ $test := partial "debug/print" .Params }}
+
+  {{ .Content }}
+
+  {{ range .Pages.ByTitle }}
+    <a href="{{ .RelPermalink }}">{{ .RelPermalink }}</a>
+    <br>
+  {{ end }}
+{{ end }}
