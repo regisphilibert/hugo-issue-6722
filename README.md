@@ -1,21 +1,26 @@
-**Notice:** this repo is no longer maintained.
+## Example repo for https://github.com/gohugoio/hugo/issues/6722
 
----
 
-# Starter Hugo debug site
+This minimal project imports the following Hugo Module: https://github.com/theNewDynamic/hugo-module-imgix
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/72f36678-5cec-40a4-bd09-6053b3071fad/deploy-status)](https://app.netlify.com/sites/starter-hugo-debug-site/deploys)
-
-A starter project for debugging Hugo [forum](https://discourse.gohugo.io/) questions. 
-
-## Demo
-
-https://starter-hugo-debug-site.netlify.com/
-
-## Usage
+It attempds to map mounts following this settings: 
 
 ```
-git clone https://github.com/zwbetz-gh/starter-hugo-debug-site.git <site_name>
-cd <site_name>
-hugo server
+module:
+  imports:
+  - path: github.com/theNewDynamic/hugo-module-imgix
+    mounts:
+      - source: func
+        target: layouts/partials/func
+      - source: markup
+        target: layouts/_markup
+      - source: data
+        target: data
 ```
+
+Results in
+```
+Error: add site dependencies: load resources: loading templates: walk: open "func" (""): file does not exist
+```
+
+func is the only failling mount, which might indicate it is bound to "sub directories" might be related to https://github.com/gohugoio/hugo/issues/6209
