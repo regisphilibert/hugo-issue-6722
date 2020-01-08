@@ -1,9 +1,10 @@
-baseURL: 'https://starter-hugo-debug-site.netlify.com/'
-languageCode: en-us
-title: Debug
-disableKinds:
-  - taxonomy
-  - taxonomyTerm
 module:
   imports:
-    - path: imgix
+  - path: github.com/theNewDynamic/hugo-module-imgix
+    mounts:
+      - source: func
+        target: layouts/partials/func
+      - source: markup
+        target: layouts/_markup
+      - source: data
+        target: data

@@ -1,7 +1,7 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
 
-  {{ $test := partial "debug/print" .Params }}
+  {{ $test := partial "func/GetSRC" "/uploads/test.jpg" }}
 
   {{ .Content }}
 
