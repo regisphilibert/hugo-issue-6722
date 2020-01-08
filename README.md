@@ -1,4 +1,4 @@
-## Example repo for https://github.com/gohugoio/hugo/issues/6722
+## Example repo for https://github.com/gohugoio/hugo/issues/6730
 
 
 This minimal project imports the following Hugo Module: https://github.com/theNewDynamic/hugo-module-imgix
